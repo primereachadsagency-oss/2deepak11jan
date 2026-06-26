@@ -1,106 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Master the Market – Beginner's Guide</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<title>Deepak Wadhwa Official</title>
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Master the Market – Beginner's Guide">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop">
+<style>
 
-  <!-- Minimal CSS (inline for speed) -->
-  <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #00f0ff;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#050505;
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    left:-180px;
+    top:-100px;
+    background:radial-gradient(circle,#c58c1a,transparent 70%);
+    filter:blur(80px);
+    opacity:.35;
+    animation:moveGlow1 8s ease-in-out infinite;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-180px;
+    bottom:-100px;
+    background:radial-gradient(circle,#ffcb30,transparent 70%);
+    filter:blur(80px);
+    opacity:.25;
+    animation:moveGlow2 10s ease-in-out infinite;
+}
+
+@keyframes moveGlow1{
+    50%{
+        transform:translate(50px,-30px) scale(1.1);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+}
+
+@keyframes moveGlow2{
+    50%{
+        transform:translate(-50px,30px) scale(1.1);
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    z-index:10;
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
+}
+
+/* Profile */
+
+.profile{
+    width:95px;
+    height:95px;
+    margin:auto;
+    border-radius:50%;
+    padding:3px;
+
+    background:linear-gradient(
+        135deg,
+        #fff4c7,
+        #d4a437
+    );
+
+    animation:
+        floatLogo 4s ease-in-out infinite,
+        glowLogo 3s ease-in-out infinite;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #000;
+}
+
+@keyframes floatLogo{
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes glowLogo{
+    0%,100%{
+        box-shadow:
+        0 0 15px rgba(255,203,48,.4),
+        0 0 35px rgba(255,203,48,.2);
+    }
+
+    50%{
+        box-shadow:
+        0 0 25px rgba(255,203,48,.9),
+        0 0 60px rgba(255,203,48,.5);
+    }
+}
+
+/* Title */
+
+h1{
+    margin-top:20px;
+    font-family:'Cinzel',serif;
+    font-size:52px;
+    text-transform:uppercase;
+
+    background:linear-gradient(
+        to bottom,
+        #fff7da,
+        #f4dd8c,
+        #c58c1a
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    position:relative;
+    display:inline-block;
+}
+
+h1::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+    100%{
+        left:250%;
+    }
+}
+
+.subtitle{
+    color:#cfcfcf;
+    margin-top:10px;
+    font-size:13px;
+    letter-spacing:4px;
+    font-weight:600;
+}
+
+/* Card */
+
+.card{
+    width:100%;
+    max-width:500px;
+    margin:35px auto;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.5),
+    0 0 20px rgba(255,203,48,.08);
+
+    animation:cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.card p{
+    color:white;
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.card strong{
+    font-weight:700;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:18px;
+}
+
+.stat h3{
+    color:#ffcb30;
+    font-size:24px;
+
+    animation:statGlow 2s ease-in-out infinite;
+}
+
+@keyframes statGlow{
+    50%{
+        text-shadow:
+        0 0 10px #ffcb30,
+        0 0 20px #ffcb30;
+    }
+}
+
+.stat span{
+    color:#9e9e9e;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* Button */
+
+.cta{
+    width:400px;
+    max-width:90%;
+    height:75px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:20px;
+    font-weight:700;
+    color:#111;
+
+    border-radius:50px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        120deg,
+        #fff4c7,
+        #d4a437,
+        #fff4c7
+    );
+
+    box-shadow:
+    0 0 25px rgba(255,203,48,.4),
+    0 0 60px rgba(255,203,48,.2);
+
+    animation:buttonPulse 3s ease-in-out infinite;
+
+    transition:.3s;
+}
+
+.cta:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+.cta::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 3s linear infinite;
+}
+
+@keyframes buttonShine{
+    100%{
+        left:250%;
+    }
+}
+
+@keyframes buttonPulse{
+
+    50%{
+        box-shadow:
+        0 0 40px rgba(255,203,48,.8),
+        0 0 90px rgba(255,203,48,.3);
+    }
+}
+
+/* Footer */
+
+.footer{
+    margin-top:20px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#7f7f7f;
+}
+
+.agency{
+    margin-top:10px;
+    color:white;
+}
+
+.agency span{
+    color:#ffcb30;
+    font-weight:700;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .card{
+        max-width:100%;
+        padding:20px;
+    }
+
+    .stats{
+        gap:10px;
+    }
+
+    .stat h3{
+        font-size:18px;
+    }
+
     .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+        height:65px;
+        font-size:16px;
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
-    }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
-  </style>
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2026205018026269');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2026205018026269&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    
 </head>
 <body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Master the Market – Beginner's Guide</h1>
-    <p class="sub">Understand charts & risk before trading</p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+<div class="container">
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+    <div class="profile">
+        <img src="Deepak.jpg" alt="Profile">
+    </div>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp65.html" rel="nofollow">Start Learning</a>
+    <h1>Deepak Wadhwa Official™</h1>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+    <div class="subtitle">
+        ELITE TRADING MASTERY
+    </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+    <div class="card">
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
-  </main>
+        <p>
+            Master the charts and crush the markets.<br>
+            Join us for <strong>real-time predictive insights</strong><br>
+            and exclusive winning strategies.
+        </p>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+        <div class="stats">
+
+            <div class="stat">
+                <h3>12.4k+</h3>
+                <span>TRADERS</span>
+            </div>
+
+            <div class="stat">
+                <h3>98.2%</h3>
+                <span>ACCURACY</span>
+            </div>
+
+            <div class="stat">
+                <h3>LIVE</h3>
+                <span>ANALYSIS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="https://t.me/+cFr9an8kq5g3NjI1" class="cta">
+        JOIN THE LEARNING CHANNEL
+    </a>
+
+    <div class="footer">
+        ✦ 18+ | PLAY RESPONSIBLY ✦
+
+        <div class="agency">
+            Ads managed by <span>Digital Ads Expert</span>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
